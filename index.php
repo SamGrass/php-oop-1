@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/Model/movie.php';
+require_once __DIR__ . '/Model/genre.php';
 require_once __DIR__ . '/db/db-movies.php';
 
 ?>
@@ -24,7 +25,9 @@ require_once __DIR__ . '/db/db-movies.php';
                     <div class="card-body">
                         <h5 class="card-title text-center"><?php echo $movie->name ?></h5>
                         <h6 class="card-title text-center"><?php echo $movie->year ?></h6>
-
+                        <ul>
+                            <?php $movie->genre->printGenre() ?>
+                        </ul>
                     </div>
                 </div>
             <?php endforeach; ?>
